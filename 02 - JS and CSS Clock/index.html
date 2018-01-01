@@ -9,9 +9,12 @@
 
     <div class="clock">
       <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
+        <div class="hand hour-hand" id="hour-hand">
+          <div class="outside"></div>
+          <div class="inside"></div>
+        </div>
+        <div class="hand min-hand" id="minute-hand"></div>
+        <div class="hand second-hand" id="second-hand"></div>
       </div>
     </div>
 
@@ -68,10 +71,28 @@
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
 
-   .hour-hand {
-
+   #hour-hand {
+     height: 10px;
+     background: rgba(0, 0, 0, 0);
+     display: flex;
+     flex-direction: row;
+     
    }
-
+   .outside {
+     width: 50%;
+     height: 100%;
+     opacity: 1;
+     background: rgba(0, 0, 0, 0);
+   }
+   .inside {
+     height: 100%;
+     width: 50%;
+     background: black;
+     opacity: 1;
+   }
+   #second-hand {
+     background: red;
+   }
   </style>
 
   <script>
